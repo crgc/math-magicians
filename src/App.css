@@ -49,6 +49,7 @@
 .Key:focus,
 .Key:hover {
   cursor: pointer;
+  filter: brightness(0.85);
 }
 
 .bg-orange {
@@ -62,6 +63,3 @@
   grid-row-end: 5;
 }
 
-.darken {
-  filter: brightness(0.85);
-}
