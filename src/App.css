@@ -1,33 +1,33 @@
-.main,
-.display,
-.cell {
+.App,
+.Display,
+.Key {
   display: flex;
   align-items: center;
 }
 
-.main,
-.cell {
+.App,
+.Key {
   flex-direction: column;
   justify-content: center;
 }
 
-.main {
+.App {
   background-color: #2f3640;
   min-height: 100vh;
   font-size: calc(5px + 2vmin);
 }
 
-.calculator {
+.Calculator {
   width: 450px;
   font-weight: bold;
 }
 
-.display,
-.cell {
+.Display,
+.Key {
   min-height: 65px;
 }
 
-.display {
+.Display {
   background-color: #858694;
   color: white;
   justify-content: flex-end;
@@ -35,19 +35,19 @@
   font-size: calc(8px + 2vmin);
 }
 
-.keyboard {
+.Keyboard {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
 
-.cell {
+.Key {
   color: #1f294b;
   background-color: #e0e0e0;
   border: #c0c0c0 solid 1px;
 }
 
-.cell:focus,
-.cell:hover {
+.Key:focus,
+.Key:hover {
   cursor: pointer;
 }
 
