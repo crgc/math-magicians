@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Key extends Component {
+  handleKeyPress() {
+    const { value, handleKeyPress } = this.props; /* eslint-disable-line react/prop-types */
+    handleKeyPress(value);
+  }
+
   isOperation() {
     const { value } = this.props; /* eslint-disable-line react/prop-types */
     const operations = ['÷', '+', '-', '=', 'x'];
@@ -20,13 +25,14 @@ class Key extends Component {
     }
 
     return (
-      <div className={className}>{ value }</div>
+      <div role="button" className={className} onClick={this.handleKeyPress}>{ value }</div>  /* eslint-disable-line */
     );
   }
 }
 
 Key.propsType = {
   value: PropTypes.string.isRequired,
+  handleKeyPress: PropTypes.func.isRequired,
 };
 
 export default Key;

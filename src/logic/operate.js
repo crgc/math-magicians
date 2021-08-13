@@ -1,4 +1,4 @@
-import Big from 'big.js';
+import Big from 'big.js'; /* eslint-disable-line */
 
 export default function operate(numberOne, numberTwo, operation) {
   const one = Big(numberOne);
@@ -13,7 +13,11 @@ export default function operate(numberOne, numberTwo, operation) {
     return one.times(two).toString();
   }
   if (operation === '÷') {
-    return one.div(two).toString();
+    if (Big(0).eq(two)) {
+      throw Error('Division by zero');
+    } else {
+      return one.div(two).toString();
+    }
   }
   if (operation === '%') {
     return one.mod(two).toString();

@@ -12,11 +12,11 @@ class Display extends Component { /* eslint-disable-line react/prefer-stateless-
 }
 
 Display.propsType = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 Display.defaultProps = {
-  value: 0,
+  value: '0',
 };
 
 export default Display;

@@ -4,8 +4,8 @@ import Key from './Key';
 
 class Keyboard extends Component { /* eslint-disable-line react/prefer-stateless-function */
   render() {
-    const { keyValues } = this.props; /* eslint-disable-line react/prop-types */
-    const keys = keyValues.map((keyValue) => <Key key={keyValue} value={keyValue} />); /* eslint-disable-line */
+    const { keyValues, onKeyPress } = this.props; /* eslint-disable-line react/prop-types */
+    const keys = keyValues.map((keyValue) => <Key key={keyValue} value={keyValue} handleKeyPress={onKeyPress} />); /* eslint-disable-line */
 
     return (
       <div className="Keyboard">
@@ -17,6 +17,7 @@ class Keyboard extends Component { /* eslint-disable-line react/prefer-stateless
 
 Keyboard.propsType = {
   keyValues: PropTypes.array.isRequired,
+  onKeyPress: PropTypes.func.isRequired,
 };
 
 Keyboard.defaultProps = {
