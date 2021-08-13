@@ -1,12 +1,15 @@
+import React from 'react';
 import './App.css';
 import Calculator from './components/Calculator';
 
-function App() {
-  return (
-    <div className="App">
-      <Calculator />
-    </div>
-  );
+class App extends React.Component { /* eslint-disable-line react/prefer-stateless-function */
+  render() {
+    return (
+      <div className="App">
+        <Calculator />
+      </div>
+    );
+  }
 }
 
 export default App;
