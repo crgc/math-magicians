@@ -3,9 +3,25 @@ import PropTypes from 'prop-types';
 import Key from './Key';
 
 class Keyboard extends Component { /* eslint-disable-line react/prefer-stateless-function */
+  constructor(props) {
+    super(props);
+    this.state = {
+      calculatorObject: {},
+    };
+    this.onCalculate = this.onCalculate.bind(this);
+  }
+
+  onCalculate(newCalculatorObject) {
+    this.setState({
+      calculatorObject: newCalculatorObject,
+    });
+  }
+
   render() {
     const { keyValues, onKeyPress } = this.props; /* eslint-disable-line react/prop-types */
-    const keys = keyValues.map((keyValue) => <Key key={keyValue} value={keyValue} handleKeyPress={onKeyPress} />); /* eslint-disable-line */
+    const keys = keyValues.map((keyValue) => { /* eslint-disable-line */
+      return <Key key={keyValue} value={keyValue} onKeyPress={onKeyPress} calculator={this.state.calculatorObject} onCalculate={this.onCalculate}/>; /* eslint-disable-line */
+    });
 
     return (
       <div className="Keyboard">

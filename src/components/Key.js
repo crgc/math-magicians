@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import calculate from '../logic/calculate';
 
 class Key extends Component {
   constructor(props) {
@@ -8,10 +9,13 @@ class Key extends Component {
   }
 
   handleKeyPress() {
-    const { value, handleKeyPress } = this.props; /* eslint-disable-line react/prop-types */
-    if (!this.isOperation()) {
-      handleKeyPress(value);
-    }
+    const {
+      value, calculator, onCalculate, onKeyPress, /* eslint-disable-line react/prop-types */
+    } = this.props;
+    const newCalculator = calculate(calculator, value);
+
+    onCalculate(newCalculator, value);
+    onKeyPress(newCalculator.total);
   }
 
   isOperation() {
@@ -38,7 +42,9 @@ class Key extends Component {
 Key.propsType = {
   value: PropTypes.string.isRequired,
   operations: PropTypes.array.isRequired,
-  handleKeyPress: PropTypes.func.isRequired,
+  onKeyPress: PropTypes.func.isRequired,
+  onCalculate: PropTypes.func.isRequired,
+  calculator: PropTypes.objectOf(PropTypes.string).isRequired,
 };
 
 Key.defaultProps = {
