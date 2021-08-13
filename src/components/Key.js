@@ -12,10 +12,30 @@ class Key extends Component {
     const {
       value, calculator, onCalculate, onKeyPress, /* eslint-disable-line react/prop-types */
     } = this.props;
-    const newCalculator = calculate(calculator, value);
 
-    onCalculate(newCalculator, value);
-    onKeyPress(newCalculator.total);
+    try {
+      const updatedCalculator = calculate(calculator, value);
+      const output = this.getCalculatorOutput(updatedCalculator);
+
+      onCalculate(updatedCalculator, value);
+      onKeyPress(output);
+    } catch (err) {
+      onKeyPress(`ERR: ${err.message}`);
+      onCalculate({}, 'AC');
+    }
+  }
+
+  getCalculatorOutput = (calculator) => {
+    let output = calculator.next;
+    if (output === null) {
+      output = calculator.total;
+    }
+
+    if (output === null) {
+      output = '0';
+    }
+
+    return output;
   }
 
   isOperation() {

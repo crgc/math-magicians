@@ -14,7 +14,7 @@ export default function operate(numberOne, numberTwo, operation) {
   }
   if (operation === '÷') {
     if (Big(0).eq(two)) {
-      throw Error('Division by zero');
+      throw Error('Division by 0');
     } else {
       return one.div(two).toString();
     }
