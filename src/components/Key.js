@@ -15,10 +15,8 @@ class Key extends Component {
   }
 
   isOperation() {
-    const { value } = this.props; /* eslint-disable-line react/prop-types */
-    const operations = ['÷', '+', '-', '=', 'x'];
-
-    return operations.includes(value);
+    const { operations, value } = this.props; /* eslint-disable-line react/prop-types */
+    return operations.includes(value); /* eslint-disable-line react/prop-types */
   }
 
   render() {
@@ -39,7 +37,12 @@ class Key extends Component {
 
 Key.propsType = {
   value: PropTypes.string.isRequired,
+  operations: PropTypes.array.isRequired,
   handleKeyPress: PropTypes.func.isRequired,
+};
+
+Key.defaultProps = {
+  operations: ['÷', '+', '-', '=', 'x'],
 };
 
 export default Key;
