@@ -1,8 +1,8 @@
-import React from 'react';
 import './App.css';
+import React, { Component } from 'react';
 import Calculator from './components/Calculator';
 
-class App extends React.Component { /* eslint-disable-line react/prefer-stateless-function */
+class App extends Component { /* eslint-disable-line react/prefer-stateless-function */
   render() {
     return (
       <div className="App">
