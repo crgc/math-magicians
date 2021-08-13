@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Key extends Component {
+  constructor(props) {
+    super(props);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
   handleKeyPress() {
     const { value, handleKeyPress } = this.props; /* eslint-disable-line react/prop-types */
-    handleKeyPress(value);
+    if (!this.isOperation()) {
+      handleKeyPress(value);
+    }
   }
 
   isOperation() {
