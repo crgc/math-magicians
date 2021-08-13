@@ -23,7 +23,7 @@
 
 ### Prerequisites
 
-- [React](https://reactjs.org/)
+- [Node >= 10.16](https://nodejs.org/en/)
 
 ### Setup
 
