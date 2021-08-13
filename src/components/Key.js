@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Key extends React.Component {
+class Key extends Component {
   isOperation() {
     const { value } = this.props; /* eslint-disable-line react/prop-types */
     const operations = ['÷', '+', '-', '=', 'x'];

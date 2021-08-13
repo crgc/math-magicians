@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Key from './Key';
 
-class Keyboard extends React.Component { /* eslint-disable-line react/prefer-stateless-function */
+class Keyboard extends Component { /* eslint-disable-line react/prefer-stateless-function */
   render() {
     const { keyValues } = this.props; /* eslint-disable-line react/prop-types */
     const keys = keyValues.map((keyValue) => <Key key={keyValue} value={keyValue} />); /* eslint-disable-line */

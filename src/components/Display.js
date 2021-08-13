@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Display extends React.Component { /* eslint-disable-line react/prefer-stateless-function */
+class Display extends Component { /* eslint-disable-line react/prefer-stateless-function */
   render() {
     const { value } = this.props; /* eslint-disable-line react/prop-types */
 
