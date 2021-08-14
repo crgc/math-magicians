@@ -11,7 +11,7 @@ const Calculator = () => {
 
   return (
     <div className="Calculator">
-      <Display value={displayOutput} /> { /* eslint-disable-line */ }
+      <Display value={displayOutput} />
       <Keyboard onKeyPress={updateDisplay} />
     </div>
   );
