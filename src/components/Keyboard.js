@@ -1,35 +1,25 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Key from './Key';
 
-class Keyboard extends Component { /* eslint-disable-line react/prefer-stateless-function */
-  constructor(props) {
-    super(props);
-    this.state = {
-      calculatorObject: {},
-    };
-    this.onCalculate = this.onCalculate.bind(this);
-  }
+const Keyboard = (props) => {
+  const [calculatorObject, setCalculatorObject] = useState({});
 
-  onCalculate(newCalculatorObject) {
-    this.setState({
-      calculatorObject: newCalculatorObject,
-    });
-  }
+  const onCalculate = (newCalculatorObject) => {
+    setCalculatorObject(newCalculatorObject);
+  };
 
-  render() {
-    const { keyValues, onKeyPress } = this.props; /* eslint-disable-line react/prop-types */
-    const keys = keyValues.map((keyValue) => { /* eslint-disable-line */
-      return <Key key={keyValue} value={keyValue} onKeyPress={onKeyPress} calculator={this.state.calculatorObject} onCalculate={this.onCalculate}/>; /* eslint-disable-line */
-    });
+  const { keyValues, onKeyPress } = props; /* eslint-disable-line react/prop-types */
+  const keys = keyValues.map((keyValue) => { /* eslint-disable-line */
+    return <Key key={keyValue} value={keyValue} onKeyPress={onKeyPress} calculator={calculatorObject} onCalculate={onCalculate}/>; /* eslint-disable-line */
+  });
 
-    return (
-      <div className="Keyboard">
-        { keys }
-      </div>
-    );
-  }
-}
+  return (
+    <div className="Keyboard">
+      { keys }
+    </div>
+  );
+};
 
 Keyboard.propsType = {
   keyValues: PropTypes.array.isRequired,
