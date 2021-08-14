@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Display extends Component { /* eslint-disable-line react/prefer-stateless-function */
-  render() {
-    const { value } = this.props; /* eslint-disable-line react/prop-types */
-
-    return (
-      <div className="Display">{value}</div>
-    );
-  }
-}
+const Display = (props) => (
+    <div className="Display">{props.value}</div> /* eslint-disable-line */
+);
 
 Display.propsType = {
   value: PropTypes.string.isRequired,
