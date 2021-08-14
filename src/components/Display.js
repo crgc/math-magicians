@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const Display = (props) => (
-    <div className="Display">{props.value}</div> /* eslint-disable-line */
+  <div className="Display">{props.value}</div> /* eslint-disable-line */
 );
 
 Display.propsType = {

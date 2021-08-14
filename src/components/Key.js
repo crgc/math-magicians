@@ -1,34 +1,12 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import calculate from '../logic/calculate';
 
-class Key extends Component {
-  constructor(props) {
-    super(props);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-  }
-
-  handleKeyPress() {
-    const {
-      value, calculator, onCalculate, onKeyPress, /* eslint-disable-line react/prop-types */
-    } = this.props;
-
-    try {
-      const updatedCalculator = calculate(calculator, value);
-      const output = this.getCalculatorOutput(updatedCalculator);
-
-      onCalculate(updatedCalculator, value);
-      onKeyPress(output);
-    } catch (err) {
-      onKeyPress(`ERR: ${err.message}`);
-      onCalculate({}, 'AC');
-    }
-  }
-
-  getCalculatorOutput = (calculator) => {
-    let output = calculator.next;
+const Key = (props) => {
+  const getCalculatorOutput = (calculator) => {
+    const { next, total } = calculator;
+    let output = next;
     if (output === null) {
-      output = calculator.total;
+      output = total;
     }
 
     if (output === null) {
@@ -36,28 +14,43 @@ class Key extends Component {
     }
 
     return output;
-  }
+  };
 
-  isOperation() {
-    const { operations, value } = this.props; /* eslint-disable-line react/prop-types */
-    return operations.includes(value); /* eslint-disable-line react/prop-types */
-  }
+  const handleKeyPress = () => {
+    const {
+      value, calculator, onCalculate, onKeyPress, /* eslint-disable-line react/prop-types */
+    } = props;
 
-  render() {
-    let className = 'Key';
-    const { value } = this.props; /* eslint-disable-line react/prop-types */
+    try {
+      const updatedCalculator = calculate(calculator, value);
+      const output = getCalculatorOutput(updatedCalculator);
 
-    if (this.isOperation()) {
-      className += ' bg-orange';
-    } else if (value === '0') {
-      className += ' big-zero';
+      onCalculate(updatedCalculator, value);
+      onKeyPress(output);
+    } catch (err) {
+      onKeyPress(`ERR: ${err.message}`);
+      onCalculate({}, 'AC');
     }
+  };
 
-    return (
-      <div role="button" className={className} onClick={this.handleKeyPress}>{ value }</div>  /* eslint-disable-line */
-    );
+  const isOperation = () => {
+    const { operations, value } = props; /* eslint-disable-line react/prop-types */
+    return operations.includes(value); /* eslint-disable-line react/prop-types */
+  };
+
+  let className = 'Key';
+  const { value } = props; /* eslint-disable-line react/prop-types */
+
+  if (isOperation()) {
+    className += ' bg-orange';
+  } else if (value === '0') {
+    className += ' big-zero';
   }
-}
+
+  return (
+    <div role="button" className={className} onClick={handleKeyPress}>{ value }</div>  /* eslint-disable-line */
+  );
+};
 
 Key.propsType = {
   value: PropTypes.string.isRequired,
