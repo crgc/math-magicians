@@ -3,10 +3,9 @@ import calculate from '../logic/calculate';
 
 const Key = (props) => {
   const getCalculatorOutput = (calculator) => {
-    const { next, total } = calculator;
-    let output = next;
+    let output = calculator.next;
     if (output === null) {
-      output = total;
+      output = calculator.total;
     }
 
     if (output === null) {
