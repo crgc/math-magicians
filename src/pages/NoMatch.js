@@ -1,6 +1,8 @@
 const NoMatch = () => (
-  <div className="phrase-container">
-    <h1>Nothing to see here!</h1>
+  <div className="quote-container">
+    <div className="quote">
+      <h1>Nothing to see here!</h1>
+    </div>
   </div>
 );
 

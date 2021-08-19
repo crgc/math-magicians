@@ -1,17 +1,18 @@
-.App,
 .Display,
-.Key {
+.Key,
+.quote-container {
   display: flex;
   align-items: center;
 }
 
-.App,
-.Key {
+.Key,
+.quote-container {
   flex-direction: column;
   justify-content: center;
 }
 
-.App {
+.App,
+.quote-container {
   background-color: #2f3640;
   min-height: 100vh;
   font-size: calc(5px + 2vmin);
@@ -63,7 +64,7 @@
   grid-row-end: 5;
 }
 
-.phrase-container {
+.quote {
   max-width: 60%;
   color: #f5f6fa;
 }
