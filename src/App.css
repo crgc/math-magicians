@@ -62,3 +62,13 @@
   grid-row-start: 5;
   grid-row-end: 5;
 }
+
+.phrase-container {
+  max-width: 60%;
+  color: #f5f6fa;
+}
+
+.navBar {
+  position: relative;
+}
+
