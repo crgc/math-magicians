@@ -14,8 +14,8 @@ const App = () => (
         <Quote />
       </Route>
       <Route path="*">
-          <NoMatch />
-        </Route>
+        <NoMatch />
+      </Route>
     </Switch>
   </div>
 );

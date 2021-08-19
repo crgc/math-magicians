@@ -22,8 +22,8 @@ const Navbar = () => {
 
   return (
     <nav className="navBar">
-      
-      <ul /* className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}*/>
+
+      <ul>
         {links.map((link) => (
           <li key={link.id}>
             <NavLink
@@ -31,7 +31,9 @@ const Navbar = () => {
               /* activeClassName="active-link" */
               exact
             >
-              {link.text} |
+              {link.text}
+              {' '}
+              |
             </NavLink>
           </li>
         ))}
