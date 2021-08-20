@@ -1,6 +1,6 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import Calculator from './components/Calculator';
+import CalculatorContainer from './components/CalculatorContainer';
 import Quote from './pages/Quote';
 import NoMatch from './pages/NoMatch';
 
@@ -8,7 +8,7 @@ const App = () => (
   <div className="App">
     <Switch>
       <Route exact path="/">
-        <Calculator />
+        <CalculatorContainer />
       </Route>
       <Route path="/quote">
         <Quote />
