@@ -22,22 +22,22 @@ const Navbar = () => {
 
   return (
     <nav className="navBar">
-
-      <ul>
-        {links.map((link) => (
-          <li key={link.id}>
-            <NavLink
-              to={link.path}
-              /* activeClassName="active-link" */
-              exact
-            >
-              {link.text}
-              {' '}
-              |
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+      <div className="nav-left">Math Magicians</div>
+      <div className="nav-right">
+        <ul>
+          {links.map((link) => (
+            <li key={link.id}>
+              <NavLink
+                to={link.path}
+                activeClassName="active-link"
+                exact
+              >
+                {link.text}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
