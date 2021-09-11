@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/chuckbuckethead/math-magicians">
+  <a href="https://github.com/crgc/math-magicians">
     <img src="img/screenshot.png" alt="Logo">
   </a>
 
@@ -11,9 +11,9 @@
   <p align="center">
     This project is part of the Microverse React Module.
     <br />
-    <a href="https://github.com/chuckbuckethead/math-magicians/issues">Report Bug</a>
+    <a href="https://github.com/crgc/math-magicians/issues">Report Bug</a>
     ·
-    <a href="https://github.com/chuckbuckethead/math-magicians/issues">Request Feature</a>
+    <a href="https://github.com/crgc/math-magicians/issues">Request Feature</a>
   </p>
 </p>
 
