@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Math Magicians](https://crgc-math-magicians.herokuapp.com/calc)
+[crgc-math-magicians.herokuapp.com](https://crgc-math-magicians.herokuapp.com/calc)
 
 ## Getting Started
 
