@@ -2,7 +2,7 @@
 
 <br />
 <p align="center">
-  <a href="https://github.com/chuckbuckethead/microverse-math-magicians">
+  <a href="https://github.com/chuckbuckethead/math-magicians">
     <img src="img/screenshot.png" alt="Logo">
   </a>
 
@@ -11,13 +11,17 @@
   <p align="center">
     This project is part of the Microverse React Module.
     <br />
-    <a href="https://github.com/chuckbuckethead/microverse-math-magicians/issues">Report Bug</a>
+    <a href="https://github.com/chuckbuckethead/math-magicians/issues">Report Bug</a>
     ·
-    <a href="https://github.com/chuckbuckethead/microverse-math-magicians/issues">Request Feature</a>
+    <a href="https://github.com/chuckbuckethead/math-magicians/issues">Request Feature</a>
   </p>
 </p>
 
 > A simple Calculator app built with React
+
+## Live Demo
+
+[Math Magicians](https://crgc-math-magicians.herokuapp.com/calc)
 
 ## Getting Started
 
@@ -29,11 +33,11 @@
 
 * Clone this repository
 ```
-git clone https://github.com/crgc/microverse-math-magicians.git
+git clone https://github.com/crgc/math-magicians.git
 ```
 * Change into folder
 ```
-cd microverse-math-magicians
+cd math-magicians
 ```
 * Install dependencies
 ```
